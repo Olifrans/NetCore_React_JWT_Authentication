@@ -13,12 +13,15 @@ namespace NetCoreReactJwt.Infrastructure.Data.Repository
             this._context = context;
         }
 
-        public User CreateUser(User create)
+        public User Create(User create)
         {
             _context.Users.Add(create);
             create.Id = _context.SaveChanges();
             return create;
         }
+
+
+
 
         public async Task DeleteUsersAsync(int id)
         {

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using NetCoreReactJwt.BusinessManager.Interfaces;
 using NetCoreReactJwt.Domain.Entities;
-using NetCoreReactJwt.Domain.Shared.ModelViewsDtos.ClientDtos;
+using NetCoreReactJwt.Domain.Shared.ModelViewsDtos.AccoutDtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +20,18 @@ namespace NetCoreReactJwt.BusinessManager.Implementation
             this._mapper = mapper;
         }
 
-        public User CreateUser(User create)
+        //public User Create(User user)
+        public User Create(User user)
         {
-            return _userRepository.CreateUser(create);
+            return _userRepository.Create(user);
+            //var user = _mapper.Map<User>(newUserModel);
+            //return _userRepository.Create(user);
         }
+
+
+
+
+
 
         public async Task DeleteUsersAsync(int id)
         {
@@ -40,14 +48,18 @@ namespace NetCoreReactJwt.BusinessManager.Implementation
             return await _userRepository.GetUsersIdAsync(id);
         }
 
-        public async Task<User> InsertUsersAsync(NewUser newUser)
+
+
+
+
+
+        public async Task<User> InsertUsersAsync(NewUserModelViews newUser)
         {
             var user = _mapper.Map<User>(newUser);
             return await _userRepository.InsertUsersAsync(user);
         }
 
-
-        public async Task<User> UpdateUsersAsync(UpdateUser userUpdate)
+        public async Task<User> UpdateUsersAsync(UpdateUserModelViews userUpdate)
         {
             var user = _mapper.Map<User>(userUpdate);
             return await _userRepository.UpdateUsersAsync(user);

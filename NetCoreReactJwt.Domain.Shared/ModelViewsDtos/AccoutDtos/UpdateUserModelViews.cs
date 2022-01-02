@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NetCoreReactJwt.Domain.Shared.ModelViewsDtos.ClientDtos
+namespace NetCoreReactJwt.Domain.Shared.ModelViewsDtos.AccoutDtos
 {
-    public class UpdateUser : NewUser
+    public class UpdateUserModelViews : NewUserModelViews
     {
         public int Id { get; set; }
     }

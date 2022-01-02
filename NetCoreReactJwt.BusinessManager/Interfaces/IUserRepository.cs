@@ -11,7 +11,8 @@ namespace NetCoreReactJwt.BusinessManager.Interfaces
         Task<User> InsertUsersAsync(User user);
         Task<User> UpdateUsersAsync(User user);
 
-        User CreateUser(User create);
+
+        User Create(User users);
 
     }
 }

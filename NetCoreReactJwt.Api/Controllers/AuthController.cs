@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NetCoreReactJwt.BusinessManager.Interfaces;
 using NetCoreReactJwt.Domain.Entities;
-using NetCoreReactJwt.Domain.Shared.ModelViewsDtos.ClientDtos;
+using NetCoreReactJwt.Domain.Shared.ModelViewsDtos.AccoutDtos;
 
 namespace NetCoreReactJwt.Api.Controllers
 {
@@ -17,31 +17,40 @@ namespace NetCoreReactJwt.Api.Controllers
         }
 
 
-        ///// <summary>
-        ///// Cadastra um novo usuario.
-        ///// </summary>
-        ///// <param name="user"></param>
-        ///// <returns></returns>
-        ///// <remarks>Este método cadastra um novo usuario na base de dados</remarks>
-        //[ProducesResponseType(typeof(User), StatusCodes.Status201Created)]
-        //[ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
-        //[HttpPost]
-        //[Route("users")]
-        //public IActionResult Register(User user)
+        /// <summary>
+        /// Cadastra um novo usuario.
+        /// </summary>
+        /// <param name="newUser"></param>
+        /// <returns></returns>
+        /// <remarks>Este método cadastra um novo usuario na base de dados</remarks>
+        [ProducesResponseType(typeof(User), StatusCodes.Status201Created)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+        [HttpPost]
+        [Route("users")]
+        public IActionResult Register(NewUserModelViews userModel)
+        {
+            var newUser = new User
+            {
+                Name = userModel.Name,
+                Email = userModel.Email,
+                Password = BCrypt.Net.BCrypt.HashPassword(userModel.Password)
+            };
+            return Created("Success", _userManager.Create(newUser));
+
+
+
+
+        }
+
+
+
+
+        //public async Task<IActionResult> CreateNewUser(NewUser newUser)
         //{
         //    User userInsert;
-        //    userInsert = _userManager.CreateUser(user);
-        //    return CreatedAtAction(nameof(CreateUserId), new { id = userInsert.Id }, userInsert); //Status 
+        //    userInsert = await _userManager.InsertUsersAsync(newUser);
+        //    return CreatedAtAction(nameof(GetUsersd), new { id = userInsert.Id }, userInsert); //Status 
         //}
-
-        //// GET api/<AuthController>/5
-        //[HttpGet("{id}")]
-        //public IActionResult CreateUserId(int id)
-        //{
-        //    return Ok(id);
-        //}
-
-
 
 
 
@@ -61,21 +70,21 @@ namespace NetCoreReactJwt.Api.Controllers
 
 
 
-        /// <summary>
-        /// Cadastra um novo cliente.
-        /// </summary>
-        /// <param name="user"></param>
-        /// <returns></returns>
-        /// <remarks>Este método cadastra um novo cliente na base de dados</remarks>
-        [ProducesResponseType(typeof(User), StatusCodes.Status201Created)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
-        [HttpPost]
-        public async Task<IActionResult> CreateNewUser(NewUser newUser)
-        {
-            User userInsert;
-            userInsert = await _userManager.InsertUsersAsync(newUser);
-            return CreatedAtAction(nameof(GetUsersd), new { id = userInsert.Id }, userInsert); //Status 
-        }
+        ///// <summary>
+        ///// Cadastra um novo cliente.
+        ///// </summary>
+        ///// <param name="user"></param>
+        ///// <returns></returns>
+        ///// <remarks>Este método cadastra um novo cliente na base de dados</remarks>
+        //[ProducesResponseType(typeof(User), StatusCodes.Status201Created)]
+        //[ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
+        //[HttpPost]
+        //public async Task<IActionResult> CreateNewUser(NewUser newUser)
+        //{
+        //    User userInsert;
+        //    userInsert = await _userManager.InsertUsersAsync(newUser);
+        //    return CreatedAtAction(nameof(GetUsersd), new { id = userInsert.Id }, userInsert); //Status 
+        //}
 
 
 
@@ -99,14 +108,14 @@ namespace NetCoreReactJwt.Api.Controllers
         /// <summary>
         /// Altera um cliente cadastrado.
         /// </summary>
-        /// <param name="user"></param>
+        /// <param name="userUpdate"></param>
         /// <returns></returns>
         /// <remarks>Este método altera um cliente cadastrado na base de dados</remarks>
         [ProducesResponseType(typeof(User), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         [HttpPut]
-        public async Task<IActionResult> UpdateUser(UpdateUser userUpdate)
+        public async Task<IActionResult> UpdateUser(UpdateUserModelViews userUpdate)
         {            
             var updatedUser = await _userManager.UpdateUsersAsync(userUpdate);
             if (updatedUser == null)
