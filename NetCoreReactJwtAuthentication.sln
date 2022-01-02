@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreReactJwt.Api", "NetCoreReactJwt.Api\NetCoreReactJwt.Api.csproj", "{09C1DC8F-9C2F-445A-A276-A991B3013D10}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreReactJwt.Infrastructure", "NetCoreReactJwt.Infrastructure\NetCoreReactJwt.Infrastructure.csproj", "{3C86AB06-B317-4367-B729-D83B636F97FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreReactJwt.Domain", "NetCoreReactJwt.Domain\NetCoreReactJwt.Domain.csproj", "{AD03D618-5CAE-469B-979A-F2832C703145}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreReactJwt.BusinessManager", "NetCoreReactJwt.BusinessManager\NetCoreReactJwt.BusinessManager.csproj", "{8A60C713-96E8-4049-A7B0-12AB3A9B4487}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreReactJwt.AppWeb", "NetCoreReactJwt.AppWeb\NetCoreReactJwt.AppWeb.csproj", "{8EA75393-04A7-4291-9B85-888E4AFE4768}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreReactJwt.Domain.Shared", "NetCoreReactJwt.Domain.Shared\NetCoreReactJwt.Domain.Shared.csproj", "{904F6114-FF34-4958-85F8-D90F6FAC91D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09C1DC8F-9C2F-445A-A276-A991B3013D10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09C1DC8F-9C2F-445A-A276-A991B3013D10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09C1DC8F-9C2F-445A-A276-A991B3013D10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09C1DC8F-9C2F-445A-A276-A991B3013D10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C86AB06-B317-4367-B729-D83B636F97FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C86AB06-B317-4367-B729-D83B636F97FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C86AB06-B317-4367-B729-D83B636F97FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C86AB06-B317-4367-B729-D83B636F97FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD03D618-5CAE-469B-979A-F2832C703145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD03D618-5CAE-469B-979A-F2832C703145}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD03D618-5CAE-469B-979A-F2832C703145}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD03D618-5CAE-469B-979A-F2832C703145}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A60C713-96E8-4049-A7B0-12AB3A9B4487}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A60C713-96E8-4049-A7B0-12AB3A9B4487}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A60C713-96E8-4049-A7B0-12AB3A9B4487}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A60C713-96E8-4049-A7B0-12AB3A9B4487}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EA75393-04A7-4291-9B85-888E4AFE4768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EA75393-04A7-4291-9B85-888E4AFE4768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EA75393-04A7-4291-9B85-888E4AFE4768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EA75393-04A7-4291-9B85-888E4AFE4768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{904F6114-FF34-4958-85F8-D90F6FAC91D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{904F6114-FF34-4958-85F8-D90F6FAC91D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{904F6114-FF34-4958-85F8-D90F6FAC91D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{904F6114-FF34-4958-85F8-D90F6FAC91D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2BC07356-4C9F-48D5-9914-DE685F123005}
+	EndGlobalSection
+EndGlobal
